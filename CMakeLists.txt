@@ -96,6 +96,10 @@ add_executable(test_chat tests/test_chat.f90)
 target_link_libraries(test_chat fastgpt)
 add_test(test_chat ${PROJECT_BINARY_DIR}/test_chat)
 
+add_executable(test_parallel_matmul tests/test_parallel_matmul.f90)
+target_link_libraries(test_parallel_matmul fastgpt)
+add_test(parallel_matmul ${PROJECT_BINARY_DIR}/test_parallel_matmul)
+
 if(NOT PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
     # Git auto-ignore out-of-source build directory
     file(GENERATE OUTPUT .gitignore CONTENT "*")
